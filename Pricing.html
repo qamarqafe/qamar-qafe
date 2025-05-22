@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Qamar Qafe – Packages</title>
+
+  <style>
+    @font-face {
+      font-family: 'Bodoni Poster';
+      src: url('fonts/Bodoni Poster.otf') format('truetype');
+      font-weight: bold;
+    }
+
+    :root {
+      --cream: #fdf2e9;
+      --gold: #d9a45d;
+      --green: #78835c;
+      --soft-black: #1c1c1c;
+      --font-title: 'Bodoni Poster', serif;
+    }
+
+    body {
+      margin: 0;
+      background-color: var(--cream);
+      color: var(--soft-black);
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 100%;
+      text-align: center;
+    }
+
+    header {
+      font-family: var(--font-title);
+      font-size: 4em;
+      font-weight: bold;
+      margin-top: 40px;
+      padding: 0 20px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 110px;
+      margin: 30px auto 20px;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--soft-black);
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .packages-container {
+      max-width: 1000px;
+      margin: 30px auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      padding: 0 20px;
+    }
+
+    .package {
+      background-color: var(--gold);
+      border-radius: 20px;
+      padding: 30px;
+      color: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+
+    .package h2 {
+      margin-top: 0;
+      font-family: 'Georgia', serif;
+      font-size: 1.3em;
+      text-align: center;
+    }
+
+    .package ul {
+      padding-left: 20px;
+      margin: 15px 0;
+      list-style-position: outside;
+      text-align: left;
+    }
+
+    .package li {
+      text-align: left;
+    }
+
+    .package p {
+      font-style: italic;
+      margin: 0;
+      text-align: center;
+    }
+
+    .section-blocks {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      max-width: 1000px;
+      margin: 20px auto 60px;
+      padding: 0 20px;
+    }
+
+    .section-block {
+      background-color: var(--gold);
+      color: white;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+
+    .section-block h3 {
+      margin-top: 0;
+      font-family: 'Georgia', serif;
+      font-size: 1.4em;
+    }
+
+    .section-block ul {
+      list-style-position: outside;
+      padding-left: 20px;
+      margin-top: 15px;
+    }
+
+    .section-block li {
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px 20px;
+      font-size: 0.9em;
+      color: #a48ca2;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        font-size: 2.5em;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        font-size: 1.1em;
+      }
+
+      .packages-container,
+      .section-blocks {
+        padding: 0 15px;
+      }
+
+      .section-block {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>Packages</header>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="pricing.html">Packages</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="booking.html">Inquire</a>
+    </nav>
+
+    <div class="packages-container">
+      <div class="package">
+        <h2>The Short n Sweet<br><small>Starting at $225</small></h2>
+        <ul>
+          <li>Up to 25 drinks</li>
+          <li>1.5 hours of service</li>
+          <li>Espresso or matcha, hot or iced</li>
+          <li>Choice of 1 dairy & 1 dairy-free milk</li>
+          <li>Basic flavors</li>
+        </ul>
+        <p>Ideal for intimate events and casual celebrations.</p>
+      </div>
+      <div class="package">
+        <h2>The Pop-Up<br><small>Starting at $375</small></h2>
+        <ul>
+          <li>Up to 40 drinks</li>
+          <li>2.5 hours of service</li>
+          <li>Espresso or matcha, hot or iced + 1 specialty drink</li>
+          <li>Choice of 1 dairy & 1 dairy-free milk</li>
+        </ul>
+        <p>Perfect for baby showers, birthdays, or brunch pop-ups.</p>
+      </div>
+      <div class="package">
+        <h2>The Wedding Whimsy<br><small>Starting at $750</small></h2>
+        <ul>
+          <li>80+ drinks</li>
+          <li>4 hours of service</li>
+          <li>Espresso, matcha, and specialty drinks</li>
+          <li>Custom signage + stickers</li>
+        </ul>
+        <p>Your guests deserve more than hotel coffee.</p>
+      </div>
+    </div>
+
+    <div class="section-blocks">
+      <div class="section-block">
+        <h3>Add-Ons</h3>
+        <ul>
+          <li>Custom menu signage – $20 (printed and displayed at your event)</li>
+          <li>Custom logo stickers – $40 per 100 (2-inch round)</li>
+          <li>Extra service time – $50/hour</li>
+          <li>Travel fee – $1.50 per mile (one way) beyond 30 miles</li>
+        </ul>
+      </div>
+
+      <div class="section-block">
+        <h3>Travel Policy</h3>
+        <ul>
+          <li>Travel within 30 miles (one way) of Raleigh, NC is included in every package</li>
+          <li>For events beyond 30 miles, a $1.50 per mile (one way) fee applies</li>
+          <li>We do not offer overnight or out-of-state travel</li>
+        </ul>
+      </div>
+    </div>
+
+    <footer>
+      &copy; 2025 Qamar Qafe, LLC. All rights reserved.
+    </footer>
+  </div>
+</body>
+</html>

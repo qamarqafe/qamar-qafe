@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Qamar Qafe – Gallery</title>
+
+  <style>
+    @font-face {
+      font-family: 'Bodoni Poster';
+      src: url('fonts/Bodoni Poster.otf') format('truetype');
+      font-weight: bold;
+    }
+
+    :root {
+      --cream: #fde9e9;
+      --soft-black: #1c1c1c;
+      --font-title: 'Bodoni Poster', serif;
+      --font-body: 'Quicksand', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      background-color: var(--cream);
+      color: var(--soft-black);
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 100%;
+      text-align: center;
+    }
+
+    header {
+      font-family: var(--font-title);
+      font-size: 4em;
+      font-weight: bold;
+      margin-top: 40px;
+      padding: 0 20px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 110px;
+      margin: 30px auto 20px;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--soft-black);
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .gallery {
+      column-count: 3;
+      column-gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto 60px;
+    }
+
+    .gallery img {
+      width: 100%;
+      margin-bottom: 20px;
+      border-radius: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      break-inside: avoid;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px 20px;
+      font-size: 0.9em;
+      color: #a48ca2;
+    }
+
+    @media (max-width: 900px) {
+      .gallery {
+        column-count: 2;
+      }
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        font-size: 1.1em;
+      }
+
+      header {
+        font-size: 2.5em;
+      }
+
+      .gallery {
+        column-count: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>Gallery</header>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="pricing.html">Packages</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="booking.html">Inquire</a>
+    </nav>
+
+    <div class="gallery">
+      <img src="images/cart.jpg" alt="Coffee cart with floral setup" />
+      <img src="images/bottle.JPG" alt="Menu with bouquet" />
+      <img src="images/customMenu.JPG" alt="Latte with pink flowers" />
+      <img src="images/lakemyra.JPG" alt="Latte with chamomile flowers" />
+      <img src="images/product1.JPG" alt="Matcha with lavender" />
+      <img src="images/product2.JPG" alt="Tray of bottled drinks" />
+      <img src="images/product3.jpg" alt="Coffee cart school event" />
+      <img src="images/customMenu2.JPG" alt="Coffee cart school event" />
+      <img src="images/51825.jpg" alt="Event photo of coffee cart setup" />
+      <img src="images/51825A.jpg" alt="Event photo featuring drinks and setup" />
+    </div>
+
+    <footer>
+      &copy; 2025 Qamar Qafe, LLC. All rights reserved.
+    </footer>
+  </div>
+</body>
+</html>

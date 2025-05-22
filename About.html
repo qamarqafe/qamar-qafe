@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us – Qamar Qafe</title>
+
+  <style>
+    @font-face {
+      font-family: 'Bodoni Poster';
+      src: url('fonts/Bodoni Poster.otf') format('truetype');
+      font-weight: bold;
+    }
+
+    :root {
+      --cream: #5c7c576a;
+      --green: #78835c;
+      --font-title: 'Bodoni Poster', serif;
+      --font-body: 'Quicksand', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background-color: var(--cream);
+      color: #1c1c1c;
+      font-family: var(--font-body);
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 100%;
+      text-align: center;
+    }
+
+    header {
+      font-family: var(--font-title);
+      font-size: 4em;
+      font-weight: bold;
+      margin-top: 40px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 110px;
+      margin: 30px auto 20px;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #1c1c1c;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .about-box {
+      background-color: var(--green);
+      max-width: 900px;
+      margin: 5px auto 45px;
+      padding: 40px 60px;
+      border-radius: 30px;
+      color: white;
+      font-family: var(--font-body);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      text-align: left;
+    }
+
+    .about-box h2 {
+      font-size: 2em;
+      text-align: center;
+      margin-bottom: 35px;
+      color: black;
+      font-family: var(--font-title);
+      font-weight: bold;
+    }
+
+    .about-box p {
+      font-size: 1.2em;
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        font-size: 2.5em;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        font-size: 1.1em;
+      }
+
+      .about-box {
+        padding: 30px;
+        margin: 0 15px 60px;
+      }
+
+      .about-box p {
+        font-size: 1.1em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>About Us</header>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="pricing.html">Packages</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="booking.html">Inquire</a>
+    </nav>
+
+    <div class="about-box">
+      <h2>Meet the Founder</h2>
+      <p>
+        I'm Miriam — the face behind Qamar Qafe. I’ve always loved the small joys that come with a great cup of coffee: the ritual, the warmth, and the way it brings people together.
+      </p>
+      <p>
+        What started as casual weekend brewing quickly turned into a passion project, then a licensed business. Qamar Qafe was born out of late-night ideas, support from loved ones, and a desire to create meaningful experiences through handcrafted drinks.
+      </p>
+      <p>
+        “Qamar” means “moon” in Arabic — and just like the moon, I wanted this business to feel calm, cozy, and quietly magical. Every latte, matcha, and floral foam topping is made with that energy in mind.
+      </p>
+      <p>
+        From weddings to baby showers to backyard brunches, I’m proud to bring Qamar Qafe to your moments that matter most.
+      </p>
+    </div>
+  </div>
+
+</body>
+</html>
