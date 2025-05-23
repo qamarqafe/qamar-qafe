@@ -160,10 +160,17 @@
 
       .packages-container,
       .section-blocks {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
         padding: 0 15px;
       }
 
+      .package,
       .section-block {
+        width: 100%;
+        max-width: 400px;
         padding: 20px;
       }
     }
