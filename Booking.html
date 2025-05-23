@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Qamar Qafe – Inquire</title>
 
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
     @font-face {
       font-family: 'Bodoni Poster';
@@ -17,11 +20,12 @@
       --green: #78835c;
       --soft-black: #1c1c1c;
       --font-title: 'Bodoni Poster', serif;
+      --font-body: 'Quicksand', sans-serif;
     }
 
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: var(--font-body);
       background-color: var(--cream);
       color: var(--soft-black);
     }
@@ -53,7 +57,7 @@
 
     nav a {
       text-decoration: none;
-      color: #1c1c1c;
+      color: var(--soft-black);
       transition: color 0.2s ease;
     }
 
@@ -70,6 +74,10 @@
       row-gap: 35px;
       column-gap: 30px;
       text-align: left;
+    }
+
+    form, input, select, textarea, label {
+      font-family: var(--font-body);
     }
 
     form {
@@ -201,13 +209,13 @@
         <div>
           <label for="eventType">Type of Event</label>
           <select id="eventType" name="eventType" required>
-            <option value="">Select one</option>
-            <option>Wedding</option>
-            <option>Baby Shower</option>
-            <option>Birthday</option>
-            <option>Brunch</option>
-            <option>Corporate Event</option>
-            <option>Other</option>
+            <option value="">Select an option</option>
+            <option value="Wedding">Wedding</option>
+            <option value="Baby Shower">Baby Shower</option>
+            <option value="Birthday">Birthday</option>
+            <option value="Brunch Pop-Up">Brunch Pop-Up</option>
+            <option value="Corporate Event">Corporate Event</option>
+            <option value="Other">Other</option>
           </select>
         </div>
         <div>
@@ -226,9 +234,10 @@
           <label for="package">Preferred Package</label>
           <select id="package" name="package" required>
             <option value="">Select a package</option>
-            <option>The Short n Sweet</option>
-            <option>The Pop-Up</option>
-            <option>The Wedding Whimsy</option>
+            <option value="Short n Sweet">Short n Sweet</option>
+            <option value="Pop-Up">Pop-Up</option>
+            <option value="Wedding Whimsy">Wedding Whimsy</option>
+            <option value="Unsure">Unsure</option>
           </select>
         </div>
         <div class="full-width">
