@@ -8,12 +8,12 @@
   <style>
     @font-face {
       font-family: 'Bodoni Poster';
-      src: url('/fonts/Bodoni Poster.otf') format('truetype');
-      font-weight: bold;
+      src: url('fonts/Bodoni Poster.otf') format('truetype');
+      font-weight: normal;
     }
 
     :root {
-      --cream: #e9f1fd;
+      --cream: #fdf2e9;
       --green: #78835c;
       --soft-black: #1c1c1c;
       --font-title: 'Bodoni Poster', serif;
@@ -25,21 +25,14 @@
       font-family: var(--font-body);
       background-color: var(--cream);
       color: var(--soft-black);
-    }
-
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      max-width: 100%;
+      text-align: center;
     }
 
     header {
       font-family: var(--font-title);
       font-size: 4em;
-      font-weight: bold;
+      font-weight: normal;
       margin-top: 40px;
-      text-align: center;
     }
 
     nav {
@@ -62,23 +55,31 @@
       text-decoration: underline;
     }
 
-    .form-container {
+    main {
       max-width: 1000px;
-      margin: 10px auto 5px;
-      padding: 20px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      row-gap: 35px;
-      column-gap: 30px;
+      margin: 20px auto 60px;
+      padding: 40px;
+      border-radius: 20px;
+      background-color: #fff9f5;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       text-align: left;
     }
 
-    form, input, select, textarea, label {
-      font-family: var(--font-body);
+    main h2 {
+      font-family: var(--font-title);
+      font-size: 2em;
+      text-align: center;
+      margin-bottom: 25px;
+      border-bottom: 2px solid #e0c9b6;
+      padding-bottom: 8px;
+      color: #4e342e;
     }
 
-    form {
-      width: 100%;
+    .form-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px 25px;
+      margin-top: 20px;
     }
 
     label {
@@ -87,12 +88,13 @@
       font-weight: bold;
     }
 
-    input, textarea, select {
+    input, textarea {
       width: 100%;
       padding: 10px;
       border: 2px solid #ccc;
       border-radius: 8px;
       font-size: 1em;
+      box-sizing: border-box;
     }
 
     textarea {
@@ -107,6 +109,7 @@
     .submit-button {
       grid-column: span 2;
       text-align: center;
+      margin-top: 15px;
     }
 
     .submit-button button {
@@ -178,18 +181,21 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>Book with Us</header>
 
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="About.html">About</a>
-      <a href="Pricing.html">Packages</a>
-      <a href="Gallery.html">Gallery</a>
-      <a href="Booking.html">Inquire</a>
-    </nav>
+  <header>Book with Us</header>
 
-    <form action="https://formspree.io/f/xbloywgg" method="POST">
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="pricing.html">Packages</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="booking.html">Inquire</a>
+    <a href="Policies.html">Policies</a>
+  </nav>
+
+  <main>
+    <h2>Event Inquiry Form</h2>
+    <form action="https://formspree.io/f/your-form-id" method="POST">
       <div class="form-container">
         <div>
           <label for="name">Name</label>
@@ -205,45 +211,31 @@
         </div>
         <div>
           <label for="eventType">Type of Event</label>
-          <select id="eventType" name="eventType" required>
-            <option value="">Select an option</option>
-            <option value="Wedding">Wedding</option>
-            <option value="Baby Shower">Baby Shower</option>
-            <option value="Birthday">Birthday</option>
-            <option value="Brunch Pop-Up">Brunch Pop-Up</option>
-            <option value="Corporate Event">Corporate Event</option>
-            <option value="Other">Other</option>
-          </select>
+          <input type="text" id="eventType" name="eventType" />
         </div>
         <div>
           <label for="eventDate">Event Date</label>
-          <input type="date" id="eventDate" name="eventDate" required />
+          <input type="date" id="eventDate" name="eventDate" />
         </div>
         <div>
           <label for="eventTime">Event Time</label>
-          <input type="text" id="eventTime" name="eventTime" required />
+          <input type="text" id="eventTime" name="eventTime" />
         </div>
         <div>
           <label for="guestCount">Estimated Guest Count</label>
-          <input type="number" id="guestCount" name="guestCount" required />
+          <input type="number" id="guestCount" name="guestCount" />
         </div>
         <div>
           <label for="package">Preferred Package</label>
-          <select id="package" name="package" required>
-            <option value="">Select a package</option>
-            <option value="Short n Sweet">Short n Sweet</option>
-            <option value="Pop-Up">Pop-Up</option>
-            <option value="Wedding Whimsy">Wedding Whimsy</option>
-            <option value="Unsure">Unsure</option>
-          </select>
+          <input type="text" id="package" name="package" />
         </div>
         <div class="full-width">
           <label for="address">Event Address</label>
-          <input type="text" id="address" name="address" required />
+          <input type="text" id="address" name="address" />
         </div>
         <div class="full-width">
           <label for="notes">Notes</label>
-          <textarea id="notes" name="notes" required></textarea>
+          <textarea id="notes" name="notes"></textarea>
         </div>
         <div class="submit-button">
           <button type="submit">Submit</button>
@@ -255,18 +247,19 @@
       <p><strong>Email:</strong> <a href="mailto:qamarqafe@gmail.com">qamarqafe@gmail.com</a></p>
       <div class="social-icons">
         <a href="https://instagram.com/qamarqafe" target="_blank">
-          <img src="instagram-icon.png" alt="Instagram" />
+          <img src="images/instagram-icon.png" alt="Instagram" />
         </a>
         <a href="https://tiktok.com/@qamarqafe" target="_blank">
-          <img src="tiktok-icon.png" alt="TikTok" />
+          <img src="images/tiktok-icon.png" alt="TikTok" />
         </a>
       </div>
       <p><strong>Service Area:</strong> Based in Wendell, NC — serving up to 100 miles.</p>
     </div>
+  </main>
 
-    <footer>
-      &copy; 2025 Qamar Qafe, LLC. All rights reserved.
-    </footer>
-  </div>
+  <footer>
+    &copy; 2025 Qamar Qafe, LLC. All rights reserved.
+  </footer>
+
 </body>
 </html>
