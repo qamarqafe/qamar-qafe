@@ -31,4 +31,186 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      max-wi
+      max-width: 100%;
+      text-align: center;
+    }
+
+    header {
+      font-family: var(--font-title);
+      font-size: 4em;
+      font-weight: bold;
+      margin-top: 40px;
+      padding: 0 20px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 110px;
+      margin: 30px auto 20px;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--soft-black);
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .section-blocks {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      max-width: 1000px;
+      margin: 20px auto 60px;
+      padding: 0 20px;
+    }
+
+    .section-block {
+      background-color: var(--gold);
+      color: white;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+
+    .section-block h3 {
+      margin-top: 0;
+      font-family: 'Georgia', serif;
+      font-size: 1.4em;
+    }
+
+    .section-block table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    .section-block th, .section-block td {
+      border: 1px solid white;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .section-block th {
+      background-color: rgba(255,255,255,0.3);
+    }
+
+    .section-block ul {
+      list-style-position: outside;
+      padding-left: 20px;
+      margin-top: 15px;
+    }
+
+    .section-block li {
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px 20px;
+      font-size: 0.9em;
+      color: #a48ca2;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        font-size: 2.5em;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        font-size: 1.1em;
+      }
+
+      .section-blocks {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        padding: 0 15px;
+      }
+
+      .section-block {
+        width: 100%;
+        max-width: 400px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>Policies</header>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="About.html">About</a>
+      <a href="Pricing.html">Packages</a>
+      <a href="Gallery.html">Gallery</a>
+      <a href="Booking.html">Inquire</a>
+    </nav>
+
+    <div class="section-blocks">
+      <div class="section-block">
+        <h3>Deposits</h3>
+        <p>All event bookings require a deposit to secure the date. <strong>Deposits are non-refundable.</strong> Once your deposit is paid, the booking is confirmed and the date is reserved exclusively for you. The deposit amount will be applied toward your final balance.</p>
+
+        <h3>Deposit Policy by Booking Timeline</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Time Before Event</th>
+              <th>Deposit Required</th>
+              <th>Remaining Balance Due</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Same Month Booking</td>
+              <td>75% of total</td>
+              <td>Remaining balance due 1 week before the event</td>
+            </tr>
+            <tr>
+              <td>1–2 Months in Advance</td>
+              <td>50% of total</td>
+              <td>Remaining balance due 1 week before the event</td>
+            </tr>
+            <tr>
+              <td>3+ Months in Advance</td>
+              <td>25% of total</td>
+              <td>Remaining balance due 1 week before the event</td>
+            </tr>
+          </tbody>
+        </table>
+        <p><em>All deposits are non-refundable. Booking is not confirmed until the deposit is received. We recommend booking early to ensure availability, especially during peak seasons.</em></p>
+      </div>
+
+      <div class="section-block">
+        <h3>Open Tab Method (Weddings Only)</h3>
+        <p>The Open Tab payment method is available for weddings with <strong>more than 150 guests</strong>. Guests can order drinks throughout the event, and the total is billed to the host at the end.</p>
+        <ul>
+          <li>A deposit is still required to reserve the date.</li>
+          <li>Full payment is expected immediately after the event for all drinks served under the Open Tab.</li>
+        </ul>
+
+        <h3>Additional Notes</h3>
+        <p>We recommend reviewing all policies carefully before booking. Please contact us if you have questions regarding deposits, payment methods, or event-specific arrangements.</p>
+      </div>
+    </div>
+
+    <footer>
+      &copy; 2025 Qamar Qafe, LLC. All rights reserved.
+    </footer>
+  </div>
+</body>
+</html>
