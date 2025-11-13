@@ -24,8 +24,9 @@
     }
 
     .tile {
+      position: relative;
       width: 280px;
-      height: 280px;
+      aspect-ratio: 1 / 1;
       border-radius: 20px;
       overflow: hidden;
       transition: transform 0.2s ease;
@@ -53,6 +54,7 @@
       color: white;
       text-decoration: none;
       transition: transform 0.2s ease, background-color 0.2s ease;
+      aspect-ratio: 1 / 1;
     }
 
     .logo-tile:hover {
@@ -67,16 +69,23 @@
       margin-bottom: 20px;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 600px) {
       .grid {
         grid-template-columns: 1fr;
+        gap: 20px;
       }
 
-      .tile,
-      .logo-tile {
-        width: 100%;
-        height: auto;
-        max-width: 280px;
+      .tile {
+        width: 90vw;
+        max-width: 320px;
+        margin: 0 auto;
       }
     }
   </style>
@@ -84,12 +93,12 @@
 <body>
 
   <div class="grid">
-    <a href="About.html" class="tile"><img src="6.png" alt="About Us"/></a>
-    <a href="Pricing.html" class="tile"><img src="7.png" alt="Packages"/></a>
-    <a href="Booking.html" class="tile"><img src="8.png" alt="Contact"/></a>
-    <a href="Policy.html" class="tile"><img src="11.png" alt="Policy"/></a>
-    <a href="Gallery.html" class="tile"><img src="9.png" alt="Gallery"/></a>
-    <a href="Booking.html" class="tile"><img src="10.png" alt="Inquire"/></a>
+    <a href="about.html" class="tile"><img src="6.png" alt="About Us"/></a>
+    <a href="pricing.html" class="tile"><img src="7.png" alt="Packages"/></a>
+    <a href="booking.html" class="tile"><img src="8.png" alt="Contact"/></a>
+    <a href="policy.html" class="tile"><img src="11.png" alt="Policy"/></a>
+    <a href="gallery.html" class="tile"><img src="9.png" alt="Gallery"/></a>
+    <a href="booking.html" class="tile"><img src="10.png" alt="Inquire"/></a>
   </div>
 
   <footer>&copy; 2025 Qamar Qafe, LLC. All rights reserved.</footer>
