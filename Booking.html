@@ -35,14 +35,17 @@
       margin-top: 40px;
     }
 
+    /* NAVIGATION */
     nav {
       display: flex;
       justify-content: center;
+      align-items: center;
       gap: 110px;
       margin: 30px auto 20px;
       font-family: 'Times New Roman', Times, serif;
       font-size: 1.5em;
       font-weight: bold;
+      position: relative;
     }
 
     nav a {
@@ -53,6 +56,61 @@
 
     nav a:hover {
       text-decoration: underline;
+    }
+
+    /* HAMBURGER MENU */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 25px;
+      height: 18px;
+      cursor: pointer;
+      position: absolute;
+      right: 20px;
+      top: 10px;
+    }
+
+    .hamburger span {
+      height: 3px;
+      width: 100%;
+      background-color: var(--soft-black);
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 110px;
+    }
+
+    .nav-links.active {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background-color: #fff9f5;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 15px 25px;
+      text-align: right;
+      gap: 15px;
+      z-index: 10;
+    }
+
+    @media (max-width: 900px) {
+      nav {
+        justify-content: center;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
     }
 
     main {
@@ -162,11 +220,8 @@
         font-size: 2.5em;
       }
 
-      nav {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        font-size: 1.1em;
+      main {
+        padding: 30px 20px;
       }
 
       .form-container {
@@ -185,12 +240,20 @@
   <header>Book with Us</header>
 
   <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="pricing.html">Packages</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="booking.html">Inquire</a>
-    <a href="Policies.html">Policies</a>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="About.html">About</a>
+      <a href="Pricing.html">Packages</a>
+      <a href="Gallery.html">Gallery</a>
+      <a href="Booking.html">Inquire</a>
+      <a href="Policy.html">Policies</a>
+    </div>
   </nav>
 
   <main>
@@ -260,6 +323,12 @@
   <footer>
     &copy; 2025 Qamar Qafe, LLC. All rights reserved.
   </footer>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('active');
+    }
+  </script>
 
 </body>
 </html>
