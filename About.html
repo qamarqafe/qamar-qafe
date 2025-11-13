@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About Us – Qamar Qafe</title>
-
   <style>
     @font-face {
       font-family: 'Bodoni Poster';
@@ -24,7 +23,7 @@
       margin: 0;
       background-color: var(--cream);
       color: var(--soft-black);
-      font-family: Times, var(--font-body);
+      font-family: Times(--font-body);
       text-align: center;
     }
 
@@ -48,17 +47,21 @@
       position: relative;
     }
 
-    nav a {
+    .nav-links {
+      display: flex;
+      gap: 110px;
+    }
+
+    .nav-links a {
       text-decoration: none;
       color: var(--soft-black);
       transition: color 0.2s ease;
     }
 
-    nav a:hover {
+    .nav-links a:hover {
       text-decoration: underline;
     }
 
-    /* HAMBURGER MENU */
     .hamburger {
       display: none;
       flex-direction: column;
@@ -77,40 +80,6 @@
       background-color: var(--soft-black);
       border-radius: 10px;
       transition: all 0.3s ease;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 110px;
-    }
-
-    .nav-links.active {
-      display: flex;
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      right: 20px;
-      background-color: #fff9f5;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      padding: 15px 25px;
-      text-align: right;
-      gap: 15px;
-      z-index: 10;
-    }
-
-    @media (max-width: 900px) {
-      nav {
-        justify-content: center;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .hamburger {
-        display: flex;
-      }
     }
 
     main {
@@ -146,6 +115,32 @@
       margin: 40px 0 20px;
     }
 
+    /* MOBILE */
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #fff9f5;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        padding: 15px 25px;
+        text-align: right;
+        gap: 15px;
+        z-index: 10;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
     @media (max-width: 768px) {
       header {
         font-size: 2.5em;
@@ -174,11 +169,11 @@
 
     <div class="nav-links">
       <a href="index.html">Home</a>
-      <a href="About.html">About</a>
-      <a href="Pricing.html">Packages</a>
-      <a href="Gallery.html">Gallery</a>
-      <a href="Booking.html">Inquire</a>
-      <a href="Policy.html">Policies</a>
+      <a href="about.html">About</a>
+      <a href="pricing.html">Packages</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="booking.html">Inquire</a>
+      <a href="Policies.html">Policies</a>
     </div>
   </nav>
 
@@ -207,6 +202,5 @@
       document.querySelector('.nav-links').classList.toggle('active');
     }
   </script>
-
 </body>
 </html>
