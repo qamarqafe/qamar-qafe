@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About Us – Qamar Qafe</title>
+
   <style>
     @font-face {
       font-family: 'Bodoni Poster';
@@ -23,7 +24,7 @@
       margin: 0;
       background-color: var(--cream);
       color: var(--soft-black);
-      font-family: Times(--font-body);
+      font-family: Times, var(--font-body);
       text-align: center;
     }
 
@@ -34,7 +35,6 @@
       margin-top: 40px;
     }
 
-    /* NAVIGATION */
     nav {
       display: flex;
       justify-content: center;
@@ -44,12 +44,14 @@
       font-family: 'Times New Roman', Times, serif;
       font-size: 1.5em;
       font-weight: bold;
-      position: relative;
+      flex-wrap: wrap;
     }
 
     .nav-links {
       display: flex;
       gap: 110px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     .nav-links a {
@@ -65,21 +67,14 @@
     .hamburger {
       display: none;
       flex-direction: column;
-      justify-content: space-between;
-      width: 25px;
-      height: 18px;
       cursor: pointer;
-      position: absolute;
-      right: 20px;
-      top: 10px;
+      gap: 6px;
     }
 
-    .hamburger span {
+    .hamburger div {
+      width: 25px;
       height: 3px;
-      width: 100%;
       background-color: var(--soft-black);
-      border-radius: 10px;
-      transition: all 0.3s ease;
     }
 
     main {
@@ -115,21 +110,17 @@
       margin: 40px 0 20px;
     }
 
-    /* MOBILE */
-    @media (max-width: 900px) {
+    @media (max-width: 768px) {
+      header {
+        font-size: 2.5em;
+      }
+
       .nav-links {
         display: none;
         flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        background-color: #fff9f5;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        padding: 15px 25px;
-        text-align: right;
         gap: 15px;
-        z-index: 10;
+        width: 100%;
+        margin-top: 10px;
       }
 
       .nav-links.active {
@@ -138,12 +129,12 @@
 
       .hamburger {
         display: flex;
+        margin: 0 auto;
       }
-    }
 
-    @media (max-width: 768px) {
-      header {
-        font-size: 2.5em;
+      nav {
+        flex-direction: column;
+        gap: 10px;
       }
 
       main {
@@ -162,11 +153,10 @@
 
   <nav>
     <div class="hamburger" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
-
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -199,8 +189,10 @@
 
   <script>
     function toggleMenu() {
-      document.querySelector('.nav-links').classList.toggle('active');
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.classList.toggle('active');
     }
   </script>
+
 </body>
 </html>
