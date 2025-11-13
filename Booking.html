@@ -31,18 +31,19 @@
     header {
       font-family: var(--font-title);
       font-size: 4em;
-      font-weight: normal;
+      font-weight: normal; /* restored original font weight */
       margin-top: 40px;
+      text-align: center;
     }
 
-    /* NAVIGATION */
     nav {
       position: relative;
+      min-height: 50px; /* ensures hamburger is visible */
       margin: 30px auto 20px;
     }
 
     .hamburger {
-      display: flex;
+      display: flex; /* always visible */
       flex-direction: column;
       gap: 6px;
       width: 35px;
@@ -61,18 +62,11 @@
     }
 
     .nav-links {
-      display: none;
+      display: none; /* hidden by default */
       flex-direction: column;
       gap: 15px;
       text-align: center;
-      position: absolute;
-      top: 50px;
-      right: 0;
-      background-color: #fff9f5;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      z-index: 10;
+      margin-top: 50px;
     }
 
     .nav-links a {
@@ -88,11 +82,6 @@
       text-decoration: underline;
     }
 
-    .nav-links.active {
-      display: flex;
-    }
-
-    /* MAIN FORM */
     main {
       max-width: 1000px;
       margin: 20px auto 60px;
@@ -199,9 +188,11 @@
       header {
         font-size: 2.5em;
       }
+
       .form-container {
         grid-template-columns: 1fr;
       }
+
       .full-width,
       .submit-button {
         grid-column: span 1;
@@ -298,3 +289,10 @@
   </footer>
 
   <script>
+    function toggleMenu() {
+      const nav = document.querySelector('.nav-links');
+      nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+    }
+  </script>
+</body>
+</html>
