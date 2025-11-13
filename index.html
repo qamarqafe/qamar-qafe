@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Qamar Qafe – Home</title>
-
   <style>
     body {
       margin: 0;
@@ -16,94 +15,6 @@
       align-items: center;
     }
 
-    /* ====== NAVIGATION ====== */
-    header {
-      width: 100%;
-      background-color: #fdf2e9;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 30px;
-      box-sizing: border-box;
-    }
-
-    .logo {
-      font-family: 'Bodoni Poster', serif;
-      font-size: 2em;
-      font-weight: bold;
-      color: #5a3e36;
-      letter-spacing: 1px;
-    }
-
-    nav {
-      display: flex;
-      gap: 40px;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #1c1c1c;
-      font-weight: bold;
-      font-size: 1.1em;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #5a3e36;
-    }
-
-    /* Hamburger icon */
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      gap: 5px;
-      width: 25px;
-      cursor: pointer;
-    }
-
-    .menu-toggle span {
-      display: block;
-      height: 3px;
-      background-color: #1c1c1c;
-      border-radius: 3px;
-      transition: all 0.3s ease;
-    }
-
-    /* Mobile nav menu */
-    .nav-links {
-      display: flex;
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: #fff9f5;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        text-align: center;
-        padding: 20px 0;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      }
-
-      nav a {
-        display: block;
-        padding: 12px 0;
-      }
-
-      nav.active {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: flex;
-      }
-    }
-
-    /* ====== GRID CONTENT ====== */
     .grid {
       display: grid;
       grid-template-columns: repeat(3, 280px);
@@ -179,45 +90,20 @@
     }
   </style>
 </head>
-
 <body>
 
-  <header>
-    <div class="logo">Qamar Qafe</div>
-    <div class="menu-toggle" id="menu-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <nav id="nav">
-      <a href="index.html">Home</a>
-      <a href="About.html">About</a>
-      <a href="Pricing.html">Packages</a>
-      <a href="Gallery.html">Gallery</a>
-      <a href="Policy.html">Policies</a>
-      <a href="Booking.html">Inquire</a>
-    </nav>
-  </header>
-
   <div class="grid">
-    <a href="About.html" class="tile"><img src="6.png" alt="About Us"/></a>
-    <a href="Pricing.html" class="tile"><img src="7.png" alt="Packages"/></a>
-    <a href="Booking.html" class="tile"><img src="8.png" alt="Contact"/></a>
-    <a href="Policy.html" class="tile"><img src="11.png" alt="Policy"/></a>
-    <a href="Gallery.html" class="tile"><img src="9.png" alt="Gallery"/></a>
-    <a href="Booking.html" class="tile"><img src="10.png" alt="Inquire"/></a>
+    <a href="About.html" class="tile"><img src="6.png" alt="About Us" /></a>
+    <a href="Pricing.html" class="tile"><img src="7.png" alt="Packages" /></a>
+    <a href="Booking.html" class="tile"><img src="8.png" alt="Contact" /></a>
+    <a href="Policy.html" class="tile"><img src="11.png" alt="Policy" /></a>
+    <a href="Gallery.html" class="tile"><img src="9.png" alt="Gallery" /></a>
+    <a href="Booking.html" class="tile"><img src="10.png" alt="Inquire" /></a>
   </div>
 
-  <footer>&copy; 2025 Qamar Qafe, LLC. All rights reserved.</footer>
-
-  <script>
-    const toggle = document.getElementById('menu-toggle');
-    const nav = document.getElementById('nav');
-    toggle.addEventListener('click', () => {
-      nav.classList.toggle('active');
-      toggle.classList.toggle('open');
-    });
-  </script>
+  <footer>
+    &copy; 2025 Qamar Qafe, LLC. All rights reserved.
+  </footer>
 
 </body>
 </html>
