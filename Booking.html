@@ -48,17 +48,21 @@
       position: relative;
     }
 
-    nav a {
+    .nav-links {
+      display: flex;
+      gap: 110px;
+    }
+
+    .nav-links a {
       text-decoration: none;
       color: var(--soft-black);
       transition: color 0.2s ease;
     }
 
-    nav a:hover {
+    .nav-links a:hover {
       text-decoration: underline;
     }
 
-    /* HAMBURGER MENU */
     .hamburger {
       display: none;
       flex-direction: column;
@@ -79,40 +83,7 @@
       transition: all 0.3s ease;
     }
 
-    .nav-links {
-      display: flex;
-      gap: 110px;
-    }
-
-    .nav-links.active {
-      display: flex;
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      right: 20px;
-      background-color: #fff9f5;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      padding: 15px 25px;
-      text-align: right;
-      gap: 15px;
-      z-index: 10;
-    }
-
-    @media (max-width: 900px) {
-      nav {
-        justify-content: center;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-    }
-
+    /* MAIN FORM */
     main {
       max-width: 1000px;
       margin: 20px auto 60px;
@@ -215,13 +186,35 @@
       color: #a48ca2;
     }
 
+    /* MOBILE */
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #fff9f5;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        padding: 15px 25px;
+        text-align: right;
+        gap: 15px;
+        z-index: 10;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
     @media (max-width: 768px) {
       header {
         font-size: 2.5em;
-      }
-
-      main {
-        padding: 30px 20px;
       }
 
       .form-container {
@@ -329,6 +322,5 @@
       document.querySelector('.nav-links').classList.toggle('active');
     }
   </script>
-
 </body>
 </html>
