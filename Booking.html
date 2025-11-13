@@ -9,7 +9,7 @@
     @font-face {
       font-family: 'Bodoni Poster';
       src: url('fonts/Bodoni Poster.otf') format('truetype');
-      font-weight: normal;
+      font-weight: bold;
     }
 
     :root {
@@ -31,26 +31,23 @@
     header {
       font-family: var(--font-title);
       font-size: 4em;
-      font-weight: normal; /* restored original font weight */
+      font-weight: bold; /* match other pages */
       margin-top: 40px;
-      text-align: center;
     }
 
     nav {
-      position: relative;
-      min-height: 50px; /* ensures hamburger is visible */
-      margin: 30px auto 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px 0 40px;
     }
 
     .hamburger {
-      display: flex; /* always visible */
+      display: flex;
       flex-direction: column;
       gap: 6px;
       width: 35px;
       cursor: pointer;
-      position: absolute;
-      top: 0;
-      right: 0;
       z-index: 20;
     }
 
@@ -66,7 +63,7 @@
       flex-direction: column;
       gap: 15px;
       text-align: center;
-      margin-top: 50px;
+      margin-top: 20px;
     }
 
     .nav-links a {
