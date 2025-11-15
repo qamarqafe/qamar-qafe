@@ -28,6 +28,7 @@
       text-align: center;
     }
 
+    /* ---------------- HEADER ---------------- */
     header {
       font-family: var(--font-title);
       font-size: 4em;
@@ -35,11 +36,14 @@
       margin-top: 40px;
     }
 
+    /* ---------------- NAV ---------------- */
     nav {
+      width: 100%;
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 30px auto 20px;
+      justify-content: flex-end;
+      padding: 20px;
+      position: relative;
+      box-sizing: border-box;
     }
 
     .hamburger {
@@ -47,7 +51,6 @@
       flex-direction: column;
       cursor: pointer;
       gap: 6px;
-      margin-bottom: 10px;
     }
 
     .hamburger div {
@@ -62,14 +65,21 @@
       display: none;
       flex-direction: column;
       gap: 15px;
-      text-align: center;
+      text-align: right;
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      background: #fff9f5;
+      padding: 20px 28px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
     .nav-links a {
       text-decoration: none;
       color: var(--soft-black);
       font-family: 'Times New Roman', Times, serif;
-      font-size: 1.5em;
+      font-size: 1.4em;
       font-weight: bold;
       transition: color 0.2s ease;
     }
@@ -78,21 +88,23 @@
       text-decoration: underline;
     }
 
+    /* ---------------- MAIN ---------------- */
     main {
       max-width: 900px;
       margin: 0 auto 60px;
-      padding: 40px;
+      padding: 30px;
       border-radius: 20px;
       background-color: #fff9f5;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       text-align: left;
+      margin-top: 20px; /* moved up */
     }
 
     main h2 {
       font-family: var(--font-title);
       color: #4e342e;
       font-size: 2em;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
       text-align: center;
       border-bottom: 2px solid #e0c9b6;
       padding-bottom: 8px;
@@ -104,6 +116,7 @@
       margin-bottom: 20px;
     }
 
+    /* ---------------- FOOTER ---------------- */
     footer {
       text-align: center;
       color: #a48ca2;
@@ -112,9 +125,8 @@
     }
   </style>
 </head>
-<body>
 
-  <header>About Us</header>
+<body>
 
   <nav>
     <div class="hamburger" onclick="toggleMenu()">
@@ -122,6 +134,7 @@
       <div></div>
       <div></div>
     </div>
+
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -131,6 +144,8 @@
       <a href="Policies.html">Policies</a>
     </div>
   </nav>
+
+  <header>About Us</header>
 
   <main>
     <h2>Meet the Founder</h2>
@@ -155,12 +170,7 @@
   <script>
     function toggleMenu() {
       const navLinks = document.querySelector('.nav-links');
-      navLinks.classList.toggle('active');
-      if(navLinks.style.display === "flex") {
-        navLinks.style.display = "none";
-      } else {
-        navLinks.style.display = "flex";
-      }
+      navLinks.style.display = navLinks.style.display === "flex" ? "none" : "flex";
     }
   </script>
 
