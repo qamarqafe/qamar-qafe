@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Qamar Qafe – Packages</title>
+
   <style>
     @font-face {
       font-family: 'Bodoni Poster';
@@ -13,55 +14,91 @@
 
     :root {
       --cream: #fdf2e9;
-      --gold: #d9a45d;
       --green: #78835c;
       --soft-black: #1c1c1c;
       --font-title: 'Bodoni Poster', serif;
+      --font-body: 'Quicksand', sans-serif;
     }
 
     body {
       margin: 0;
       background-color: var(--cream);
       color: var(--soft-black);
-      font-family: Arial, sans-serif;
+      font-family: Times, var(--font-body);
       text-align: center;
     }
 
+    /* ---------------- HEADER ---------------- */
     header {
       font-family: var(--font-title);
       font-size: 4em;
       font-weight: bold;
-      margin-top: 40px;
+      margin-top: 10px;
     }
 
+    /* ---------------- NAV ---------------- */
     nav {
+      width: 100%;
       display: flex;
-      justify-content: center;
-      gap: 110px;
-      margin: 30px auto 20px;
-      font-family: 'Times New Roman', Times, serif;
-      font-size: 1.5em;
-      font-weight: bold;
+      justify-content: flex-end;
+      padding: 30px 30px; /* moved down & inward */
+      position: relative;
+      box-sizing: border-box;
     }
 
-    nav a {
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 6px;
+    }
+
+    .hamburger div {
+      width: 35px;
+      height: 4px;
+      background-color: var(--soft-black);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      gap: 15px;
+      text-align: right;
+      position: absolute;
+      top: 100px;   /* same as About page */
+      right: 20px;
+      background: #fff9f5;
+      padding: 20px 28px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      z-index: 999;
+    }
+
+    .nav-links a {
       text-decoration: none;
       color: var(--soft-black);
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 1.4em;
+      font-weight: bold;
       transition: color 0.2s ease;
     }
 
-    nav a:hover {
+    .nav-links a:hover {
       text-decoration: underline;
     }
 
+    /* ---------------- MAIN ---------------- */
     main {
-      max-width: 1000px;
+      max-width: 900px;
       margin: 0 auto 60px;
-      padding: 40px;
+      padding: 30px;
       border-radius: 20px;
       background-color: #fff9f5;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       text-align: left;
+      margin-top: 20px; /* moved up */
     }
 
     .package {
@@ -76,23 +113,23 @@
 
     .package h2 {
       margin-top: 0;
-      font-family: 'Georgia', serif;
-      font-size: 1.5em;
+      font-family: var(--font-title);
+      font-size: 1.8em;
       text-align: center;
       border-bottom: 2px solid #e0c9b6;
       padding-bottom: 8px;
     }
 
     .package ul {
-      padding-left: 0; /* remove default list indentation */
+      padding-left: 0;
       margin: 15px 0;
-      list-style: none; /* remove default bullets */
+      list-style: none;
     }
 
     .package li {
       margin-bottom: 8px;
       position: relative;
-      padding-left: 25px; /* space for icon */
+      padding-left: 25px;
     }
 
     .package p {
@@ -101,6 +138,7 @@
       margin: 0;
     }
 
+    /* ---------------- FOOTER ---------------- */
     footer {
       text-align: center;
       color: #a48ca2;
@@ -113,30 +151,38 @@
         font-size: 2.5em;
       }
 
-      nav {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        font-size: 1.1em;
-      }
-
       main {
         padding: 30px 20px;
+      }
+
+      .nav-links {
+        top: 80px;
+        right: 10px;
       }
     }
   </style>
 </head>
+
 <body>
-  <header>Packages</header>
 
   <nav>
-    <a href="index.html">Home</a>
-    <a href="About.html">About</a>
-    <a href="Pricing.html">Packages</a>
-    <a href="Gallery.html">Gallery</a>
-    <a href="Booking.html">Inquire</a>
-    <a href="Policy.html">Policies</a>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="pricing.html">Packages</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="booking.html">Inquire</a>
+      <a href="Policies.html">Policies</a>
+    </div>
   </nav>
+
+  <header>Packages</header>
 
   <main>
     <div class="package">
@@ -177,5 +223,13 @@
   <footer>
     &copy; 2025 Qamar Qafe, LLC. All rights reserved.
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.style.display = navLinks.style.display === "flex" ? "none" : "flex";
+    }
+  </script>
+
 </body>
 </html>
