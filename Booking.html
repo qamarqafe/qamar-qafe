@@ -22,36 +22,39 @@
 
     body {
       margin: 0;
-      font-family: var(--font-body);
+      font-family: Times, var(--font-body);
       background-color: var(--cream);
       color: var(--soft-black);
       text-align: center;
     }
 
+    /* ---------------- HEADER ---------------- */
     header {
       font-family: var(--font-title);
       font-size: 4em;
-      font-weight: bold; /* match other pages */
-      margin-top: 40px;
+      font-weight: bold;
+      margin-top: 10px;
     }
 
+    /* ---------------- NAV ---------------- */
     nav {
+      width: 100%;
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 20px 0 40px;
+      justify-content: flex-end;
+      padding: 30px 30px;
+      position: relative;
+      box-sizing: border-box;
     }
 
     .hamburger {
       display: flex;
       flex-direction: column;
-      gap: 6px;
-      width: 35px;
       cursor: pointer;
-      z-index: 20;
+      gap: 6px;
     }
 
     .hamburger div {
+      width: 35px;
       height: 4px;
       background-color: var(--soft-black);
       border-radius: 2px;
@@ -59,18 +62,25 @@
     }
 
     .nav-links {
-      display: none; /* hidden by default */
+      display: none;
       flex-direction: column;
       gap: 15px;
-      text-align: center;
-      margin-top: 20px;
+      text-align: right;
+      position: absolute;
+      top: 100px;
+      right: 20px;
+      background: #fff9f5;
+      padding: 20px 28px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      z-index: 999;
     }
 
     .nav-links a {
       text-decoration: none;
       color: var(--soft-black);
       font-family: 'Times New Roman', Times, serif;
-      font-size: 1.5em;
+      font-size: 1.4em;
       font-weight: bold;
       transition: color 0.2s ease;
     }
@@ -79,6 +89,7 @@
       text-decoration: underline;
     }
 
+    /* ---------------- MAIN / FORM ---------------- */
     main {
       max-width: 1000px;
       margin: 20px auto 60px;
@@ -181,6 +192,7 @@
       color: #a48ca2;
     }
 
+    /* ---------------- MEDIA ---------------- */
     @media (max-width: 768px) {
       header {
         font-size: 2.5em;
@@ -199,23 +211,24 @@
 </head>
 <body>
 
-  <header>Book with Us</header>
-
   <nav>
     <div class="hamburger" onclick="toggleMenu()">
       <div></div>
       <div></div>
       <div></div>
     </div>
+
     <div class="nav-links">
       <a href="index.html">Home</a>
-      <a href="About.html">About</a>
-      <a href="Pricing.html">Packages</a>
-      <a href="Gallery.html">Gallery</a>
-      <a href="Booking.html">Inquire</a>
-      <a href="Policy.html">Policies</a>
+      <a href="about.html">About</a>
+      <a href="pricing.html">Packages</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="booking.html">Inquire</a>
+      <a href="Policies.html">Policies</a>
     </div>
   </nav>
+
+  <header>Book with Us</header>
 
   <main>
     <h2>Event Inquiry Form</h2>
@@ -287,9 +300,10 @@
 
   <script>
     function toggleMenu() {
-      const nav = document.querySelector('.nav-links');
-      nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.style.display = navLinks.style.display === "flex" ? "none" : "flex";
     }
   </script>
+
 </body>
 </html>
