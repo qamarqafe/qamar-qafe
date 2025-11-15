@@ -21,48 +21,66 @@
 
     body {
       margin: 0;
-      font-family: var(--font-body);
+      font-family: Times, var(--font-body);
       background-color: var(--cream);
       color: var(--soft-black);
-    }
-
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      max-width: 100%;
       text-align: center;
     }
 
+    /* ---------------- HEADER ---------------- */
     header {
       font-family: var(--font-title);
       font-size: 4em;
       font-weight: bold;
-      margin-top: 40px;
-      padding: 0 20px;
+      margin-top: 10px;
     }
 
-    /* NAVIGATION */
+    /* ---------------- NAV ---------------- */
     nav {
+      width: 100%;
       display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 110px;
-      margin: 30px auto 20px;
-      font-family: 'Times New Roman', Times, serif;
-      font-size: 1.5em;
-      font-weight: bold;
+      justify-content: flex-end;
+      padding: 30px 30px;
       position: relative;
+      box-sizing: border-box;
+    }
+
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 6px;
+    }
+
+    .hamburger div {
+      width: 35px;
+      height: 4px;
+      background-color: var(--soft-black);
+      border-radius: 2px;
+      transition: all 0.3s ease;
     }
 
     .nav-links {
-      display: flex;
-      gap: 110px;
+      display: none;
+      flex-direction: column;
+      gap: 15px;
+      text-align: right;
+      position: absolute;
+      top: 100px;
+      right: 20px;
+      background: #fff9f5;
+      padding: 20px 28px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      z-index: 999;
     }
 
     .nav-links a {
       text-decoration: none;
       color: var(--soft-black);
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 1.4em;
+      font-weight: bold;
       transition: color 0.2s ease;
     }
 
@@ -70,32 +88,13 @@
       text-decoration: underline;
     }
 
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 25px;
-      height: 18px;
-      cursor: pointer;
-      position: absolute;
-      right: 20px;
-      top: 10px;
-    }
-
-    .hamburger span {
-      height: 3px;
-      width: 100%;
-      background-color: var(--soft-black);
-      border-radius: 10px;
-      transition: all 0.3s ease;
-    }
-
+    /* ---------------- GALLERY ---------------- */
     .gallery {
       column-count: 3;
       column-gap: 20px;
       padding: 20px;
       max-width: 1200px;
-      margin: 0 auto 60px;
+      margin: 20px auto 60px;
     }
 
     .gallery img {
@@ -113,33 +112,15 @@
       color: #a48ca2;
     }
 
-    /* MOBILE */
+    /* ---------------- MEDIA ---------------- */
     @media (max-width: 900px) {
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        background-color: #fff9f5;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        padding: 15px 25px;
-        text-align: right;
-        gap: 15px;
-        z-index: 10;
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-
       .gallery {
         column-count: 2;
+      }
+
+      .nav-links {
+        top: 80px;
+        right: 10px;
       }
     }
 
@@ -155,51 +136,52 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>Gallery</header>
 
-    <nav>
-      <div class="hamburger" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="pricing.html">Packages</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="booking.html">Inquire</a>
-        <a href="policies.html">Policies</a>
-      </div>
-    </nav>
-
-    <div class="gallery">
-      <img src="cartSetUp.jpg" alt="Coffee cart setup" />
-      <img src="smores.png" alt="S’mores latte display" />
-      <img src="babyShower.JPG" alt="Baby shower coffee setup" />
-      <img src="cart.JPG" alt="Coffee cart with floral setup" />
-      <img src="bottle.JPG" alt="Menu with bouquet" />
-      <img src="customMenu.JPG" alt="Latte with pink flowers" />
-      <img src="lakemyra.JPG" alt="Latte with chamomile flowers" />
-      <img src="product1.JPG" alt="Matcha with lavender" />
-      <img src="product2.JPG" alt="Tray of bottled drinks" />
-      <img src="product3.JPG" alt="Coffee cart school event" />
-      <img src="customMenu2.JPG" alt="Coffee cart school event" />
-      <img src="yardmarket.JPG" alt="Event photo of coffee cart setup" />
-      <img src="51825A.JPG" alt="Event photo featuring drinks and setup" />
+  <nav>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
 
-    <footer>
-      &copy; 2025 Qamar Qafe, LLC. All rights reserved.
-    </footer>
-  </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="pricing.html">Packages</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="booking.html">Inquire</a>
+      <a href="Policies.html">Policies</a>
+    </div>
+  </nav>
+
+  <header>Gallery</header>
+
+  <main class="gallery">
+    <img src="cartSetUp.jpg" alt="Coffee cart setup" />
+    <img src="smores.png" alt="S’mores latte display" />
+    <img src="babyShower.JPG" alt="Baby shower coffee setup" />
+    <img src="cart.JPG" alt="Coffee cart with floral setup" />
+    <img src="bottle.JPG" alt="Menu with bouquet" />
+    <img src="customMenu.JPG" alt="Latte with pink flowers" />
+    <img src="lakemyra.JPG" alt="Latte with chamomile flowers" />
+    <img src="product1.JPG" alt="Matcha with lavender" />
+    <img src="product2.JPG" alt="Tray of bottled drinks" />
+    <img src="product3.JPG" alt="Coffee cart school event" />
+    <img src="customMenu2.JPG" alt="Coffee cart school event" />
+    <img src="yardmarket.JPG" alt="Event photo of coffee cart setup" />
+    <img src="51825A.JPG" alt="Event photo featuring drinks and setup" />
+  </main>
+
+  <footer>
+    &copy; 2025 Qamar Qafe, LLC. All rights reserved.
+  </footer>
 
   <script>
     function toggleMenu() {
-      document.querySelector('.nav-links').classList.toggle('active');
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.style.display = navLinks.style.display === "flex" ? "none" : "flex";
     }
   </script>
+
 </body>
 </html>
