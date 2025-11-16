@@ -22,21 +22,12 @@
 
     body {
       margin: 0;
-      background: url('policies.png') no-repeat top right;
-      background-size: contain;
-      background-color: var(--cream);
+      background-image: url('policies.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
       color: var(--soft-black);
       font-family: Arial, sans-serif;
-    }
-
-    /* overlay to keep text readable */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: rgba(255,255,255,0.75);
-      pointer-events: none;
-      z-index: -1;
     }
 
     .container {
@@ -45,11 +36,14 @@
       align-items: center;
       max-width: 100%;
       text-align: center;
+      backdrop-filter: blur(6px);
+      background: rgba(255, 255, 255, 0.75);
+      padding: 20px;
     }
 
     header {
       font-family: var(--font-title);
-      font-size: 4em;
+      font-size: 3.5em;
       font-weight: bold;
       margin-top: 40px;
       padding: 0 20px;
@@ -58,21 +52,21 @@
     nav {
       display: flex;
       justify-content: center;
-      gap: 110px;
+      gap: 80px;
       margin: 30px auto 20px;
       font-family: 'Times New Roman', Times, serif;
-      font-size: 1.5em;
+      font-size: 1.3em;
       font-weight: bold;
     }
 
     nav a {
       text-decoration: none;
       color: var(--soft-black);
-      transition: color 0.2s ease;
+      transition: opacity 0.2s ease;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      opacity: 0.7;
     }
 
     .section-blocks {
@@ -89,7 +83,7 @@
       color: white;
       padding: 25px;
       border-radius: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
       text-align: left;
     }
 
@@ -129,7 +123,8 @@
       text-align: center;
       padding: 40px 20px 20px;
       font-size: 0.9em;
-      color: #a48ca2;
+      color: white;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.4);
     }
 
     @media (max-width: 768px) {
@@ -156,10 +151,6 @@
         width: 100%;
         max-width: 400px;
         padding: 20px;
-      }
-
-      body {
-        background-size: 70%;
       }
     }
   </style>
