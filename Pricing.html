@@ -22,10 +22,19 @@
 
     body {
       margin: 0;
-      background-color: var(--cream);
-      color: var(--soft-black);
       font-family: Times, var(--font-body);
+      color: var(--soft-black);
       text-align: center;
+      background-image: url('packages.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .overlay {
+      background: rgba(255, 249, 245, 0.85);
+      padding: 20px 0;
+      min-height: 100vh;
     }
 
     /* ---------------- HEADER ---------------- */
@@ -41,7 +50,7 @@
       width: 100%;
       display: flex;
       justify-content: flex-end;
-      padding: 30px 30px; /* moved down & inward */
+      padding: 30px 30px;
       position: relative;
       box-sizing: border-box;
     }
@@ -67,7 +76,7 @@
       gap: 15px;
       text-align: right;
       position: absolute;
-      top: 100px;   /* same as About page */
+      top: 100px;
       right: 20px;
       background: #fff9f5;
       padding: 20px 28px;
@@ -92,13 +101,9 @@
     /* ---------------- MAIN ---------------- */
     main {
       max-width: 900px;
-      margin: 0 auto 60px;
-      padding: 30px;
+      margin: 20px auto 60px;
       border-radius: 20px;
-      background-color: #fff9f5;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      text-align: left;
-      margin-top: 20px; /* moved up */
+      padding: 30px;
     }
 
     .package {
@@ -115,7 +120,6 @@
       margin-top: 0;
       font-family: var(--font-title);
       font-size: 1.8em;
-      text-align: center;
       border-bottom: 2px solid #e0c9b6;
       padding-bottom: 8px;
     }
@@ -134,7 +138,6 @@
 
     .package p {
       font-style: italic;
-      text-align: center;
       margin: 0;
     }
 
@@ -164,65 +167,66 @@
 </head>
 
 <body>
+  <div class="overlay">
+    <nav>
+      <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
 
-  <nav>
-    <div class="hamburger" onclick="toggleMenu()">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="About.html">About</a>
+        <a href="Pricing.html">Packages</a>
+        <a href="Gallery.html">Gallery</a>
+        <a href="Booking.html">Inquire</a>
+        <a href="Policy.html">Policies</a>
+      </div>
+    </nav>
 
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="About.html">About</a>
-      <a href="Pricing.html">Packages</a>
-      <a href="Gallery.html">Gallery</a>
-      <a href="Booking.html">Inquire</a>
-      <a href="Policy.html">Policies</a>
-    </div>
-  </nav>
+    <header>Packages</header>
 
-  <header>Packages</header>
+    <main>
+      <div class="package">
+        <h2>The Short n Sweet<br><small>Starting at $225</small></h2>
+        <ul>
+          <li>Up to 25 drinks</li>
+          <li>1.5 hours of service</li>
+          <li>Espresso or matcha, hot or iced</li>
+          <li>Choice of 1 dairy & 1 dairy-free milk</li>
+          <li>Basic flavors</li>
+        </ul>
+        <p>Ideal for intimate events and casual celebrations.</p>
+      </div>
 
-  <main>
-    <div class="package">
-      <h2>The Short n Sweet<br><small>Starting at $225</small></h2>
-      <ul>
-        <li>Up to 25 drinks</li>
-        <li>1.5 hours of service</li>
-        <li>Espresso or matcha, hot or iced</li>
-        <li>Choice of 1 dairy & 1 dairy-free milk</li>
-        <li>Basic flavors</li>
-      </ul>
-      <p>Ideal for intimate events and casual celebrations.</p>
-    </div>
+      <div class="package">
+        <h2>The Pop-Up<br><small>Starting at $375</small></h2>
+        <ul>
+          <li>Up to 40 drinks</li>
+          <li>2.5 hours of service</li>
+          <li>Espresso or matcha, hot or iced + 1 specialty drink</li>
+          <li>Choice of 1 dairy & 1 dairy-free milk</li>
+        </ul>
+        <p>Perfect for baby showers, birthdays, or brunch pop-ups.</p>
+      </div>
 
-    <div class="package">
-      <h2>The Pop-Up<br><small>Starting at $375</small></h2>
-      <ul>
-        <li>Up to 40 drinks</li>
-        <li>2.5 hours of service</li>
-        <li>Espresso or matcha, hot or iced + 1 specialty drink</li>
-        <li>Choice of 1 dairy & 1 dairy-free milk</li>
-      </ul>
-      <p>Perfect for baby showers, birthdays, or brunch pop-ups.</p>
-    </div>
+      <div class="package">
+        <h2>The Wedding Whimsy<br><small>Starting at $750</small></h2>
+        <ul>
+          <li>80+ drinks</li>
+          <li>4 hours of service</li>
+          <li>Espresso, matcha, and specialty drinks</li>
+          <li>Custom signage + stickers</li>
+        </ul>
+        <p>Your guests deserve more than hotel coffee.</p>
+      </div>
+    </main>
 
-    <div class="package">
-      <h2>The Wedding Whimsy<br><small>Starting at $750</small></h2>
-      <ul>
-        <li>80+ drinks</li>
-        <li>4 hours of service</li>
-        <li>Espresso, matcha, and specialty drinks</li>
-        <li>Custom signage + stickers</li>
-      </ul>
-      <p>Your guests deserve more than hotel coffee.</p>
-    </div>
-  </main>
-
-  <footer>
-    &copy; 2025 Qamar Qafe, LLC. All rights reserved.
-  </footer>
+    <footer>
+      &copy; 2025 Qamar Qafe, LLC. All rights reserved.
+    </footer>
+  </div>
 
   <script>
     function toggleMenu() {
@@ -230,6 +234,5 @@
       navLinks.style.display = navLinks.style.display === "flex" ? "none" : "flex";
     }
   </script>
-
 </body>
 </html>
