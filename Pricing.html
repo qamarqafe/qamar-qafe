@@ -13,7 +13,6 @@
     }
 
     :root {
-      --cream: #fdf2e9;
       --green: #78835c;
       --soft-black: #1c1c1c;
       --font-title: 'Bodoni Poster', serif;
@@ -29,12 +28,6 @@
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
-    }
-
-    .overlay {
-      background: rgba(255, 249, 245, 0.85);
-      padding: 20px 0;
-      min-height: 100vh;
     }
 
     /* ---------------- HEADER ---------------- */
@@ -167,72 +160,25 @@
 </head>
 
 <body>
-  <div class="overlay">
-    <nav>
-      <div class="hamburger" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
+  <nav>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
 
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="About.html">About</a>
-        <a href="Pricing.html">Packages</a>
-        <a href="Gallery.html">Gallery</a>
-        <a href="Booking.html">Inquire</a>
-        <a href="Policy.html">Policies</a>
-      </div>
-    </nav>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="About.html">About</a>
+      <a href="Pricing.html">Packages</a>
+      <a href="Gallery.html">Gallery</a>
+      <a href="Booking.html">Inquire</a>
+      <a href="Policy.html">Policies</a>
+    </div>
+  </nav>
 
-    <header>Packages</header>
+  <header>Packages</header>
 
-    <main>
-      <div class="package">
-        <h2>The Short n Sweet<br><small>Starting at $225</small></h2>
-        <ul>
-          <li>Up to 25 drinks</li>
-          <li>1.5 hours of service</li>
-          <li>Espresso or matcha, hot or iced</li>
-          <li>Choice of 1 dairy & 1 dairy-free milk</li>
-          <li>Basic flavors</li>
-        </ul>
-        <p>Ideal for intimate events and casual celebrations.</p>
-      </div>
-
-      <div class="package">
-        <h2>The Pop-Up<br><small>Starting at $375</small></h2>
-        <ul>
-          <li>Up to 40 drinks</li>
-          <li>2.5 hours of service</li>
-          <li>Espresso or matcha, hot or iced + 1 specialty drink</li>
-          <li>Choice of 1 dairy & 1 dairy-free milk</li>
-        </ul>
-        <p>Perfect for baby showers, birthdays, or brunch pop-ups.</p>
-      </div>
-
-      <div class="package">
-        <h2>The Wedding Whimsy<br><small>Starting at $750</small></h2>
-        <ul>
-          <li>80+ drinks</li>
-          <li>4 hours of service</li>
-          <li>Espresso, matcha, and specialty drinks</li>
-          <li>Custom signage + stickers</li>
-        </ul>
-        <p>Your guests deserve more than hotel coffee.</p>
-      </div>
-    </main>
-
-    <footer>
-      &copy; 2025 Qamar Qafe, LLC. All rights reserved.
-    </footer>
-  </div>
-
-  <script>
-    function toggleMenu() {
-      const navLinks = document.querySelector('.nav-links');
-      navLinks.style.display = navLinks.style.display === "flex" ? "none" : "flex";
-    }
-  </script>
-</body>
-</html>
+  <main>
+    <div class="package">
+      <h2>The Short n Sweet<br><small>Starting at $225</small>
