@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Qamar Qafe – Policies</title>
+  <title>Qamar Qafe – Inquire</title>
 
   <style>
     @font-face {
@@ -22,213 +22,219 @@
 
     body {
       margin: 0;
-      background: url('policies.png') no-repeat top right;
-      background-size: contain;
-      background-color: var(--cream);
+      padding: 0;
+      background-image: url('booking.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
       color: var(--soft-black);
       font-family: Arial, sans-serif;
     }
 
-    /* overlay to keep text readable */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: rgba(255,255,255,0.75);
-      pointer-events: none;
-      z-index: -1;
-    }
-
-    .container {
+    /* NAVBAR WRAPPER */
+    .nav-wrapper {
+      position: absolute;
+      top: 20px;
+      right: 20px;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      max-width: 100%;
-      text-align: center;
+      gap: 15px;
+      z-index: 200;
     }
 
-    header {
+    /* TITLE */
+    .title {
       font-family: var(--font-title);
-      font-size: 4em;
+      font-size: 3.2em;
       font-weight: bold;
-      margin-top: 40px;
-      padding: 0 20px;
+      color: white;
+      text-shadow: 0 3px 6px rgba(0,0,0,0.25);
     }
 
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 110px;
-      margin: 30px auto 20px;
-      font-family: 'Times New Roman', Times, serif;
-      font-size: 1.5em;
-      font-weight: bold;
+    /* HAMBURGER */
+    .hamburger {
+      font-size: 38px;
+      cursor: pointer;
+      user-select: none;
+      color: white;
+      padding: 5px 12px;
+      border-radius: 8px;
+      transition: background 0.2s ease;
     }
 
-    nav a {
+    .hamburger:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    /* NAV LINKS BOX */
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      gap: 15px;
+      text-align: right;
+      position: absolute;
+      top: 60px;
+      right: 0px;
+      background: rgba(255,255,255,0.92);
+      padding: 20px 28px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      z-index: 300;
+    }
+
+    .nav-links a {
       text-decoration: none;
       color: var(--soft-black);
-      transition: color 0.2s ease;
+      font-size: 1.2em;
+      font-weight: bold;
+      transition: opacity 0.2s ease;
     }
 
-    nav a:hover {
-      text-decoration: underline;
+    .nav-links a:hover {
+      opacity: 0.6;
     }
 
-    .section-blocks {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 25px;
-      max-width: 1000px;
-      margin: 20px auto 60px;
-      padding: 0 20px;
-    }
-
-    .section-block {
-      background-color: var(--gold);
-      color: white;
-      padding: 25px;
+    /* MAIN FORM BLOCK */
+    .form-container {
+      backdrop-filter: blur(6px);
+      background: rgba(255,255,255,0.75);
+      max-width: 650px;
+      padding: 40px;
+      margin: 150px auto 80px;
       border-radius: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      text-align: left;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
 
-    .section-block h3 {
+    h2 {
+      font-family: var(--font-title);
+      font-size: 2.3em;
       margin-top: 0;
-      font-family: 'Georgia', serif;
-      font-size: 1.4em;
-    }
-
-    .section-block table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 15px;
-    }
-
-    .section-block th, .section-block td {
-      border: 1px solid white;
-      padding: 10px;
       text-align: center;
     }
 
-    .section-block th {
-      background-color: rgba(255,255,255,0.3);
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 20px;
     }
 
-    .section-block ul {
-      list-style-position: outside;
-      padding-left: 20px;
-      margin-top: 15px;
+    input, textarea, select {
+      width: 100%;
+      padding: 12px;
+      margin-top: 8px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+      font-family: Arial, sans-serif;
     }
 
-    .section-block li {
-      margin-bottom: 10px;
+    textarea {
+      height: 120px;
+      resize: none;
+    }
+
+    button {
+      margin-top: 25px;
+      width: 100%;
+      padding: 14px;
+      background: var(--gold);
+      color: white;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    button:hover {
+      background: #c7964e;
     }
 
     footer {
       text-align: center;
       padding: 40px 20px 20px;
       font-size: 0.9em;
-      color: #a48ca2;
+      color: white;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.4);
     }
 
+    /* MOBILE */
     @media (max-width: 768px) {
-      header {
-        font-size: 2.5em;
+      .title {
+        font-size: 2.3em;
       }
 
-      nav {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        font-size: 1.1em;
+      .hamburger {
+        font-size: 34px;
       }
 
-      .section-blocks {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        align-items: center;
-        padding: 0 15px;
-      }
-
-      .section-block {
-        width: 100%;
-        max-width: 400px;
-        padding: 20px;
-      }
-
-      body {
-        background-size: 70%;
+      .form-container {
+        margin: 130px 20px 60px;
+        padding: 30px;
       }
     }
   </style>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.querySelector(".nav-links");
+      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    }
+  </script>
 </head>
-
 <body>
-  <div class="container">
-    <header>Policies</header>
 
-    <nav>
+  <!-- NAVBAR -->
+  <div class="nav-wrapper">
+    <div class="title">Inquire</div>
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+
+    <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="About.html">About</a>
       <a href="Pricing.html">Packages</a>
       <a href="Gallery.html">Gallery</a>
       <a href="Booking.html">Inquire</a>
       <a href="Policy.html">Policies</a>
-    </nav>
-
-    <div class="section-blocks">
-      <div class="section-block">
-        <h3>Deposits</h3>
-        <p>All event bookings require a deposit to secure the date. <strong>Deposits are non-refundable.</strong> Once your deposit is paid, the booking is confirmed and the date is reserved exclusively for you. The deposit amount will be applied toward your final balance.</p>
-
-        <h3>Deposit Policy by Booking Timeline</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Time Before Event</th>
-              <th>Deposit Required</th>
-              <th>Remaining Balance Due</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Same Month Booking</td>
-              <td>75% of total</td>
-              <td>Remaining balance due 1 week before the event</td>
-            </tr>
-            <tr>
-              <td>1–2 Months in Advance</td>
-              <td>50% of total</td>
-              <td>Remaining balance due 1 week before the event</td>
-            </tr>
-            <tr>
-              <td>3+ Months in Advance</td>
-              <td>25% of total</td>
-              <td>Remaining balance due 1 week before the event</td>
-            </tr>
-          </tbody>
-        </table>
-        <p><em>All deposits are non-refundable. Booking is not confirmed until the deposit is received. We recommend booking early to ensure availability, especially during peak seasons.</em></p>
-      </div>
-
-      <div class="section-block">
-        <h3>Open Tab Method (Weddings Only)</h3>
-        <p>The Open Tab payment method is available for weddings with <strong>more than 150 guests</strong>. Guests can order drinks throughout the event, and the total is billed to the host at the end.</p>
-        <ul>
-          <li>A deposit is still required to reserve the date.</li>
-          <li>Full payment is expected immediately after the event for all drinks served under the Open Tab.</li>
-        </ul>
-
-        <h3>Additional Notes</h3>
-        <p>We recommend reviewing all policies carefully before booking. Please contact us if you have questions regarding deposits, payment methods, or event-specific arrangements.</p>
-      </div>
     </div>
-
-    <footer>
-      &copy; 2025 Qamar Qafe, LLC. All rights reserved.
-    </footer>
   </div>
+
+  <!-- INQUIRY FORM -->
+  <div class="form-container">
+    <h2>Booking Inquiry</h2>
+
+    <form>
+      <label>Name</label>
+      <input type="text" required />
+
+      <label>Email</label>
+      <input type="email" required />
+
+      <label>Event Date</label>
+      <input type="date" required />
+
+      <label>Estimated Guest Count</label>
+      <input type="number" required />
+
+      <label>Event Type</label>
+      <select required>
+        <option>Wedding</option>
+        <option>Birthday</option>
+        <option>Corporate Event</option>
+        <option>Baby Shower</option>
+        <option>Other</option>
+      </select>
+
+      <label>Additional Details</label>
+      <textarea></textarea>
+
+      <button type="submit">Submit Inquiry</button>
+    </form>
+  </div>
+
+  <footer>
+    &copy; 2025 Qamar Qafe, LLC. All rights reserved.
+  </footer>
+
 </body>
 </html>
