@@ -51,6 +51,8 @@
       flex-direction: column;
       cursor: pointer;
       gap: 6px;
+      position: relative;
+      z-index: 1001;
     }
 
     .hamburger div {
@@ -67,7 +69,7 @@
       gap: 15px;
       text-align: right;
       position: absolute;
-      top: 100px;
+      top: 100px; 
       right: 20px;
       background: #fff9f5;
       padding: 20px 28px;
@@ -164,25 +166,9 @@
       font-size: 1.2em;
     }
 
-    .contact-info a {
-      color: #007BFF;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .social-icons {
-      margin: 20px 0;
-    }
-
-    .social-icons a {
-      text-decoration: none;
-      margin: 0 10px;
-    }
-
     .social-icons img {
       width: 48px;
       height: 48px;
-      vertical-align: middle;
     }
 
     footer {
@@ -192,23 +178,14 @@
       color: #a48ca2;
     }
 
-    /* ---------------- MEDIA ---------------- */
     @media (max-width: 768px) {
-      header {
-        font-size: 2.5em;
-      }
-
-      .form-container {
-        grid-template-columns: 1fr;
-      }
-
-      .full-width,
-      .submit-button {
-        grid-column: span 1;
-      }
+      header { font-size: 2.5em; }
+      .form-container { grid-template-columns: 1fr; }
+      .full-width, .submit-button { grid-column: 1; }
     }
   </style>
 </head>
+
 <body>
 
   <nav>
@@ -224,7 +201,7 @@
       <a href="pricing.html">Packages</a>
       <a href="gallery.html">Gallery</a>
       <a href="booking.html">Inquire</a>
-      <a href="Policy.html">Policies</a>
+      <a href="policy.html">Policies</a>
     </div>
   </nav>
 
@@ -232,56 +209,70 @@
 
   <main>
     <h2>Event Inquiry Form</h2>
+
     <form action="https://formspree.io/f/your-form-id" method="POST">
       <div class="form-container">
+
         <div>
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required />
+          <label>Name</label>
+          <input type="text" name="name" required />
         </div>
+
         <div>
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" required />
+          <label>Phone Number</label>
+          <input type="tel" name="phone" required />
         </div>
+
         <div>
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required />
+          <label>Email</label>
+          <input type="email" name="email" required />
         </div>
+
         <div>
-          <label for="eventType">Type of Event</label>
-          <input type="text" id="eventType" name="eventType" />
+          <label>Type of Event</label>
+          <input type="text" name="eventType" />
         </div>
+
         <div>
-          <label for="eventDate">Event Date</label>
-          <input type="date" id="eventDate" name="eventDate" />
+          <label>Event Date</label>
+          <input type="date" name="eventDate" />
         </div>
+
         <div>
-          <label for="eventTime">Event Time</label>
-          <input type="text" id="eventTime" name="eventTime" />
+          <label>Event Time</label>
+          <input type="text" name="eventTime" />
         </div>
+
         <div>
-          <label for="guestCount">Estimated Guest Count</label>
-          <input type="number" id="guestCount" name="guestCount" />
+          <label>Estimated Guest Count</label>
+          <input type="number" name="guestCount" />
         </div>
+
         <div>
-          <label for="package">Preferred Package</label>
-          <input type="text" id="package" name="package" />
+          <label>Preferred Package</label>
+          <input type="text" name="package" />
         </div>
+
         <div class="full-width">
-          <label for="address">Event Address</label>
-          <input type="text" id="address" name="address" />
+          <label>Event Address</label>
+          <input type="text" name="address" />
         </div>
+
         <div class="full-width">
-          <label for="notes">Notes</label>
-          <textarea id="notes" name="notes"></textarea>
+          <label>Notes</label>
+          <textarea name="notes"></textarea>
         </div>
+
         <div class="submit-button">
           <button type="submit">Submit</button>
         </div>
+
       </div>
     </form>
 
     <div class="contact-info">
       <p><strong>Email:</strong> <a href="mailto:qamarqafe@gmail.com">qamarqafe@gmail.com</a></p>
+
       <div class="social-icons">
         <a href="https://instagram.com/qamarqafe" target="_blank">
           <img src="instagram-icon.png" alt="Instagram" />
@@ -290,6 +281,7 @@
           <img src="tiktok-icon.png" alt="TikTok" />
         </a>
       </div>
+
       <p><strong>Service Area:</strong> Based in Raleigh, NC — serving up to 100 miles.</p>
     </div>
   </main>
@@ -300,8 +292,8 @@
 
   <script>
     function toggleMenu() {
-      const navLinks = document.querySelector('.nav-links');
-      navLinks.style.display = navLinks.style.display === "flex" ? "none" : "flex";
+      const nav = document.querySelector(".nav-links");
+      nav.style.display = nav.style.display === "flex" ? "none" : "flex";
     }
   </script>
 
