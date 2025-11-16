@@ -23,9 +23,18 @@
     body {
       margin: 0;
       font-family: Times, var(--font-body);
-      background-color: var(--cream);
       color: var(--soft-black);
       text-align: center;
+      background-image: url('book.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .overlay {
+      background: rgba(255, 249, 245, 0.85);
+      min-height: 100vh;
+      padding-bottom: 40px;
     }
 
     /* ---------------- HEADER ---------------- */
@@ -210,93 +219,94 @@
   </style>
 </head>
 <body>
-
-  <nav>
-    <div class="hamburger" onclick="toggleMenu()">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="pricing.html">Packages</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="booking.html">Inquire</a>
-      <a href="Policy.html">Policies</a>
-    </div>
-  </nav>
-
-  <header>Book with Us</header>
-
-  <main>
-    <h2>Event Inquiry Form</h2>
-    <form action="https://formspree.io/f/your-form-id" method="POST">
-      <div class="form-container">
-        <div>
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required />
-        </div>
-        <div>
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" required />
-        </div>
-        <div>
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required />
-        </div>
-        <div>
-          <label for="eventType">Type of Event</label>
-          <input type="text" id="eventType" name="eventType" />
-        </div>
-        <div>
-          <label for="eventDate">Event Date</label>
-          <input type="date" id="eventDate" name="eventDate" />
-        </div>
-        <div>
-          <label for="eventTime">Event Time</label>
-          <input type="text" id="eventTime" name="eventTime" />
-        </div>
-        <div>
-          <label for="guestCount">Estimated Guest Count</label>
-          <input type="number" id="guestCount" name="guestCount" />
-        </div>
-        <div>
-          <label for="package">Preferred Package</label>
-          <input type="text" id="package" name="package" />
-        </div>
-        <div class="full-width">
-          <label for="address">Event Address</label>
-          <input type="text" id="address" name="address" />
-        </div>
-        <div class="full-width">
-          <label for="notes">Notes</label>
-          <textarea id="notes" name="notes"></textarea>
-        </div>
-        <div class="submit-button">
-          <button type="submit">Submit</button>
-        </div>
+  <div class="overlay">
+    <nav>
+      <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
-    </form>
 
-    <div class="contact-info">
-      <p><strong>Email:</strong> <a href="mailto:qamarqafe@gmail.com">qamarqafe@gmail.com</a></p>
-      <div class="social-icons">
-        <a href="https://instagram.com/qamarqafe" target="_blank">
-          <img src="images/instagram-icon.png" alt="Instagram" />
-        </a>
-        <a href="https://tiktok.com/@qamarqafe" target="_blank">
-          <img src="images/tiktok-icon.png" alt="TikTok" />
-        </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="pricing.html">Packages</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="booking.html">Inquire</a>
+        <a href="policy.html">Policies</a>
       </div>
-      <p><strong>Service Area:</strong> Based in Wendell, NC — serving up to 100 miles.</p>
-    </div>
-  </main>
+    </nav>
 
-  <footer>
-    &copy; 2025 Qamar Qafe, LLC. All rights reserved.
-  </footer>
+    <header>Book with Us</header>
+
+    <main>
+      <h2>Event Inquiry Form</h2>
+      <form action="https://formspree.io/f/your-form-id" method="POST">
+        <div class="form-container">
+          <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div>
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div>
+            <label for="eventType">Type of Event</label>
+            <input type="text" id="eventType" name="eventType" />
+          </div>
+          <div>
+            <label for="eventDate">Event Date</label>
+            <input type="date" id="eventDate" name="eventDate" />
+          </div>
+          <div>
+            <label for="eventTime">Event Time</label>
+            <input type="text" id="eventTime" name="eventTime" />
+          </div>
+          <div>
+            <label for="guestCount">Estimated Guest Count</label>
+            <input type="number" id="guestCount" name="guestCount" />
+          </div>
+          <div>
+            <label for="package">Preferred Package</label>
+            <input type="text" id="package" name="package" />
+          </div>
+          <div class="full-width">
+            <label for="address">Event Address</label>
+            <input type="text" id="address" name="address" />
+          </div>
+          <div class="full-width">
+            <label for="notes">Notes</label>
+            <textarea id="notes" name="notes"></textarea>
+          </div>
+          <div class="submit-button">
+            <button type="submit">Submit</button>
+          </div>
+        </div>
+      </form>
+
+      <div class="contact-info">
+        <p><strong>Email:</strong> <a href="mailto:qamarqafe@gmail.com">qamarqafe@gmail.com</a></p>
+        <div class="social-icons">
+          <a href="https://instagram.com/qamarqafe" target="_blank">
+            <img src="images/instagram-icon.png" alt="Instagram" />
+          </a>
+          <a href="https://tiktok.com/@qamarqafe" target="_blank">
+            <img src="images/tiktok-icon.png" alt="TikTok" />
+          </a>
+        </div>
+        <p><strong>Service Area:</strong> Based in Wendell, NC — serving up to 100 miles.</p>
+      </div>
+    </main>
+
+    <footer>
+      &copy; 2025 Qamar Qafe, LLC. All rights reserved.
+    </footer>
+  </div>
 
   <script>
     function toggleMenu() {
@@ -304,6 +314,5 @@
       navLinks.style.display = navLinks.style.display === "flex" ? "none" : "flex";
     }
   </script>
-
 </body>
 </html>
