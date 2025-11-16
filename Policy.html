@@ -22,51 +22,85 @@
 
     body {
       margin: 0;
+      font-family: Arial, sans-serif;
       background-image: url('policies.png');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
       color: var(--soft-black);
-      font-family: Arial, sans-serif;
     }
 
+    /* Hamburger Navigation */
+    nav {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      padding: 20px 30px;
+      position: relative;
+      box-sizing: border-box;
+      z-index: 1000;
+    }
+
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 6px;
+    }
+
+    .hamburger div {
+      width: 35px;
+      height: 4px;
+      background-color: var(--soft-black);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      gap: 15px;
+      text-align: right;
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 20px 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--soft-black);
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 1.2em;
+      font-weight: bold;
+      transition: opacity 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      opacity: 0.7;
+    }
+
+    /* Container with slight overlay for readability */
     .container {
       display: flex;
       flex-direction: column;
       align-items: center;
       max-width: 100%;
       text-align: center;
-      backdrop-filter: blur(6px);
-      background: rgba(255, 255, 255, 0.75);
+      background: rgba(255,255,255,0.4);
       padding: 20px;
+      margin: 0 10px;
+      border-radius: 15px;
     }
 
     header {
       font-family: var(--font-title);
       font-size: 3.5em;
       font-weight: bold;
-      margin-top: 40px;
-      padding: 0 20px;
-    }
-
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 80px;
-      margin: 30px auto 20px;
-      font-family: 'Times New Roman', Times, serif;
-      font-size: 1.3em;
-      font-weight: bold;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: var(--soft-black);
-      transition: opacity 0.2s ease;
-    }
-
-    nav a:hover {
-      opacity: 0.7;
+      margin-top: 30px;
     }
 
     .section-blocks {
@@ -74,7 +108,7 @@
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 25px;
       max-width: 1000px;
-      margin: 20px auto 60px;
+      margin: 30px auto 60px;
       padding: 0 20px;
     }
 
@@ -132,13 +166,6 @@
         font-size: 2.5em;
       }
 
-      nav {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        font-size: 1.1em;
-      }
-
       .section-blocks {
         display: flex;
         flex-direction: column;
@@ -157,17 +184,25 @@
 </head>
 
 <body>
-  <div class="container">
-    <header>Policies</header>
+  <nav>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
 
-    <nav>
+    <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="About.html">About</a>
       <a href="Pricing.html">Packages</a>
       <a href="Gallery.html">Gallery</a>
       <a href="Booking.html">Inquire</a>
       <a href="Policy.html">Policies</a>
-    </nav>
+    </div>
+  </nav>
+
+  <div class="container">
+    <header>Policies</header>
 
     <div class="section-blocks">
       <div class="section-block">
@@ -221,5 +256,12 @@
       &copy; 2025 Qamar Qafe, LLC. All rights reserved.
     </footer>
   </div>
+
+  <script>
+    function toggleMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.style.display = navLinks.style.display === "flex" ? "none" : "flex";
+    }
+  </script>
 </body>
 </html>
