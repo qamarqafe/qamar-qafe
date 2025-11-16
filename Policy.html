@@ -30,77 +30,68 @@
       color: var(--soft-black);
     }
 
-    /* Hamburger Navigation */
-    nav {
-      width: 100%;
-      display: flex;
-      justify-content: flex-end;
-      padding: 20px 30px;
-      position: relative;
-      box-sizing: border-box;
-      z-index: 1000;
-    }
-
-    .hamburger {
-      display: flex;
-      flex-direction: column;
-      cursor: pointer;
-      gap: 6px;
-    }
-
-    .hamburger div {
-      width: 35px;
-      height: 4px;
-      background-color: var(--soft-black);
-      border-radius: 2px;
-      transition: all 0.3s ease;
-    }
-
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      gap: 15px;
-      text-align: right;
-      position: absolute;
-      top: 70px;
-      right: 20px;
-      background: rgba(255, 255, 255, 0.95);
-      padding: 20px 25px;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--soft-black);
-      font-family: 'Times New Roman', Times, serif;
-      font-size: 1.2em;
-      font-weight: bold;
-      transition: opacity 0.2s ease;
-    }
-
-    .nav-links a:hover {
-      opacity: 0.7;
-    }
-
-    /* Container with slight overlay for readability */
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      max-width: 100%;
-      text-align: center;
-      background: rgba(255,255,255,0.4);
-      padding: 20px;
-      margin: 0 10px;
-      border-radius: 15px;
-    }
-
     header {
       font-family: var(--font-title);
       font-size: 3.5em;
       font-weight: bold;
-      margin-top: 30px;
+      margin-top: 40px;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin: 30px auto 20px;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 1.3em;
+      font-weight: bold;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--soft-black);
+      transition: opacity 0.2s ease;
+    }
+
+    nav a:hover {
+      opacity: 0.7;
+    }
+
+    /* Hamburger menu for mobile */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .hamburger div {
+      width: 30px;
+      height: 4px;
+      background-color: var(--soft-black);
+      border-radius: 2px;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      gap: 15px;
+      text-align: center;
+      background: rgba(255,255,255,0.95);
+      padding: 15px;
+      border-radius: 10px;
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      z-index: 999;
+    }
+
+    .mobile-nav a {
+      color: var(--soft-black);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2em;
     }
 
     .section-blocks {
@@ -108,12 +99,12 @@
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 25px;
       max-width: 1000px;
-      margin: 30px auto 60px;
+      margin: 20px auto 60px;
       padding: 0 20px;
     }
 
     .section-block {
-      background-color: var(--gold);
+      background-color: rgba(217,164,93,0.95);
       color: white;
       padding: 25px;
       border-radius: 20px;
@@ -166,6 +157,23 @@
         font-size: 2.5em;
       }
 
+      nav {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+        position: absolute;
+        top: 30px;
+        right: 20px;
+        z-index: 1000;
+      }
+
+      .mobile-nav {
+        width: 80%;
+        left: 10%;
+      }
+
       .section-blocks {
         display: flex;
         flex-direction: column;
@@ -184,83 +192,90 @@
 </head>
 
 <body>
-  <nav>
-    <div class="hamburger" onclick="toggleMenu()">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
+  <header>Policies</header>
 
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="About.html">About</a>
-      <a href="Pricing.html">Packages</a>
-      <a href="Gallery.html">Gallery</a>
-      <a href="Booking.html">Inquire</a>
-      <a href="Policy.html">Policies</a>
-    </div>
+  <!-- Desktop nav -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="About.html">About</a>
+    <a href="Pricing.html">Packages</a>
+    <a href="Gallery.html">Gallery</a>
+    <a href="Booking.html">Inquire</a>
+    <a href="Policy.html">Policies</a>
   </nav>
 
-  <div class="container">
-    <header>Policies</header>
+  <!-- Hamburger for mobile -->
+  <div class="hamburger" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
 
-    <div class="section-blocks">
-      <div class="section-block">
-        <h3>Deposits</h3>
-        <p>All event bookings require a deposit to secure the date. <strong>Deposits are non-refundable.</strong> Once your deposit is paid, the booking is confirmed and the date is reserved exclusively for you. The deposit amount will be applied toward your final balance.</p>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="About.html">About</a>
+    <a href="Pricing.html">Packages</a>
+    <a href="Gallery.html">Gallery</a>
+    <a href="Booking.html">Inquire</a>
+    <a href="Policy.html">Policies</a>
+  </div>
 
-        <h3>Deposit Policy by Booking Timeline</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Time Before Event</th>
-              <th>Deposit Required</th>
-              <th>Remaining Balance Due</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Same Month Booking</td>
-              <td>75% of total</td>
-              <td>Remaining balance due 1 week before the event</td>
-            </tr>
-            <tr>
-              <td>1–2 Months in Advance</td>
-              <td>50% of total</td>
-              <td>Remaining balance due 1 week before the event</td>
-            </tr>
-            <tr>
-              <td>3+ Months in Advance</td>
-              <td>25% of total</td>
-              <td>Remaining balance due 1 week before the event</td>
-            </tr>
-          </tbody>
-        </table>
-        <p><em>All deposits are non-refundable. Booking is not confirmed until the deposit is received. We recommend booking early to ensure availability, especially during peak seasons.</em></p>
-      </div>
+  <div class="section-blocks">
+    <div class="section-block">
+      <h3>Deposits</h3>
+      <p>All event bookings require a deposit to secure the date. <strong>Deposits are non-refundable.</strong> Once your deposit is paid, the booking is confirmed and the date is reserved exclusively for you. The deposit amount will be applied toward your final balance.</p>
 
-      <div class="section-block">
-        <h3>Open Tab Method (Weddings Only)</h3>
-        <p>The Open Tab payment method is available for weddings with <strong>more than 150 guests</strong>. Guests can order drinks throughout the event, and the total is billed to the host at the end.</p>
-        <ul>
-          <li>A deposit is still required to reserve the date.</li>
-          <li>Full payment is expected immediately after the event for all drinks served under the Open Tab.</li>
-        </ul>
-
-        <h3>Additional Notes</h3>
-        <p>We recommend reviewing all policies carefully before booking. Please contact us if you have questions regarding deposits, payment methods, or event-specific arrangements.</p>
-      </div>
+      <h3>Deposit Policy by Booking Timeline</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Time Before Event</th>
+            <th>Deposit Required</th>
+            <th>Remaining Balance Due</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Same Month Booking</td>
+            <td>75% of total</td>
+            <td>Remaining balance due 1 week before the event</td>
+          </tr>
+          <tr>
+            <td>1–2 Months in Advance</td>
+            <td>50% of total</td>
+            <td>Remaining balance due 1 week before the event</td>
+          </tr>
+          <tr>
+            <td>3+ Months in Advance</td>
+            <td>25% of total</td>
+            <td>Remaining balance due 1 week before the event</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><em>All deposits are non-refundable. Booking is not confirmed until the deposit is received. We recommend booking early to ensure availability, especially during peak seasons.</em></p>
     </div>
 
-    <footer>
-      &copy; 2025 Qamar Qafe, LLC. All rights reserved.
-    </footer>
+    <div class="section-block">
+      <h3>Open Tab Method (Weddings Only)</h3>
+      <p>The Open Tab payment method is available for weddings with <strong>more than 150 guests</strong>. Guests can order drinks throughout the event, and the total is billed to the host at the end.</p>
+      <ul>
+        <li>A deposit is still required to reserve the date.</li>
+        <li>Full payment is expected immediately after the event for all drinks served under the Open Tab.</li>
+      </ul>
+
+      <h3>Additional Notes</h3>
+      <p>We recommend reviewing all policies carefully before booking. Please contact us if you have questions regarding deposits, payment methods, or event-specific arrangements.</p>
+    </div>
   </div>
+
+  <footer>
+    &copy; 2025 Qamar Qafe, LLC. All rights reserved.
+  </footer>
 
   <script>
     function toggleMenu() {
-      const navLinks = document.querySelector('.nav-links');
-      navLinks.style.display = navLinks.style.display === "flex" ? "none" : "flex";
+      const mobileNav = document.getElementById('mobileNav');
+      mobileNav.style.display = mobileNav.style.display === "flex" ? "none" : "flex";
     }
   </script>
 </body>
