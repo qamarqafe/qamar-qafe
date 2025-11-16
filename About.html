@@ -22,10 +22,11 @@
 
     body {
       margin: 0;
-      background-color: var(--cream);
+      background: url('about.png') center/cover no-repeat fixed;
       color: var(--soft-black);
       font-family: Times, var(--font-body);
       text-align: center;
+      min-height: 100vh;
     }
 
     /* ---------------- HEADER ---------------- */
@@ -34,6 +35,7 @@
       font-size: 4em;
       font-weight: bold;
       margin-top: 10px;
+      text-shadow: 0 0 6px rgba(255,255,255,0.7);
     }
 
     /* ---------------- NAV ---------------- */
@@ -41,7 +43,7 @@
       width: 100%;
       display: flex;
       justify-content: flex-end;
-      padding: 30px 30px; /* moved down & inward */
+      padding: 30px 30px;
       position: relative;
       box-sizing: border-box;
     }
@@ -67,7 +69,7 @@
       gap: 15px;
       text-align: right;
       position: absolute;
-      top: 100px;   /* <-- Move DOWN */
+      top: 100px;
       right: 20px;
       background: #fff9f5;
       padding: 20px 28px;
@@ -95,10 +97,11 @@
       margin: 0 auto 60px;
       padding: 30px;
       border-radius: 20px;
-      background-color: #fff9f5;
+      background-color: rgba(255, 249, 245, 0.85);
+      backdrop-filter: blur(4px);
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       text-align: left;
-      margin-top: 20px; /* moved up */
+      margin-top: 20px;
     }
 
     main h2 {
@@ -120,9 +123,10 @@
     /* ---------------- FOOTER ---------------- */
     footer {
       text-align: center;
-      color: #a48ca2;
+      color: #ffffff;
       font-size: 0.9em;
       margin: 40px 0 20px;
+      text-shadow: 0 0 5px #000;
     }
   </style>
 </head>
