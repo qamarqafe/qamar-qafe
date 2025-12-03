@@ -37,61 +37,57 @@
       text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
     }
 
-    /* Desktop nav */
+    /* NAVIGATION */
     nav {
+      width: 100%;
       display: flex;
-      justify-content: center;
-      gap: 50px;
-      margin: 30px auto 20px;
-      font-family: 'Times New Roman', Times, serif;
-      font-size: 1.3em;
-      font-weight: bold;
+      justify-content: flex-end;
+      padding: 30px;
+      position: relative;
+      box-sizing: border-box;
     }
 
-    nav a {
-      text-decoration: none;
-      color: var(--soft-black);
-      transition: opacity 0.2s ease;
-    }
-
-    nav a:hover {
-      opacity: 0.7;
-    }
-
-    /* Hamburger menu for mobile */
     .hamburger {
-      display: none;
+      display: flex;
       flex-direction: column;
       cursor: pointer;
-      gap: 5px;
+      gap: 6px;
     }
 
     .hamburger div {
-      width: 30px;
+      width: 35px;
       height: 4px;
       background-color: var(--soft-black);
       border-radius: 2px;
+      transition: all 0.3s ease;
     }
 
-    .mobile-nav {
+    .nav-links {
       display: none;
       flex-direction: column;
       gap: 15px;
-      text-align: center;
-      background: rgba(255,255,255,0.95);
-      padding: 15px;
-      border-radius: 10px;
+      text-align: right;
       position: absolute;
-      top: 70px;
+      top: 80px;
       right: 20px;
+      background: #fff9f5;
+      padding: 20px 28px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       z-index: 999;
     }
 
-    .mobile-nav a {
-      color: var(--soft-black);
+    .nav-links a {
       text-decoration: none;
+      color: var(--soft-black);
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 1.4em;
       font-weight: bold;
-      font-size: 1.2em;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
     }
 
     .section-blocks {
@@ -156,74 +152,34 @@
       header {
         font-size: 2.5em;
       }
-
-      nav {
-        display: none;
-      }
-
-      .hamburger {
-        display: flex;
-        position: absolute;
-        top: 30px;
-        right: 20px;
-        z-index: 1000;
-      }
-
-      .mobile-nav {
-        width: 80%;
-        left: 10%;
-      }
-
-      .section-blocks {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        align-items: center;
-        padding: 0 15px;
-      }
-
-      .section-block {
-        width: 100%;
-        max-width: 400px;
-        padding: 20px;
-      }
     }
   </style>
 </head>
 
 <body>
-  <header>Policies</header>
-
-  <!-- Desktop nav -->
   <nav>
-    <a href="index.html">Home</a>
-    <a href="About.html">About</a>
-    <a href="Pricing.html">Packages</a>
-    <a href="Gallery.html">Gallery</a>
-    <a href="Booking.html">Inquire</a>
-    <a href="Policy.html">Policies</a>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="About.html">About</a>
+      <a href="Pricing.html">Packages</a>
+      <a href="Gallery.html">Gallery</a>
+      <a href="Booking.html">Inquire</a>
+      <a href="Policy.html">Policies</a>
+    </div>
   </nav>
 
-  <!-- Hamburger for mobile -->
-  <div class="hamburger" onclick="toggleMenu()">
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-
-  <div class="mobile-nav" id="mobileNav">
-    <a href="index.html">Home</a>
-    <a href="About.html">About</a>
-    <a href="Pricing.html">Packages</a>
-    <a href="Gallery.html">Gallery</a>
-    <a href="Booking.html">Inquire</a>
-    <a href="Policy.html">Policies</a>
-  </div>
+  <header>Policies</header>
 
   <div class="section-blocks">
     <div class="section-block">
       <h3>Deposits</h3>
-      <p>All event bookings require a deposit to secure the date. <strong>Deposits are non-refundable.</strong> Once your deposit is paid, the booking is confirmed and the date is reserved exclusively for you. The deposit amount will be applied toward your final balance.</p>
+      <p>All event bookings require a deposit to secure the date. <strong>Deposits are non-refundable.</strong></p>
 
       <h3>Deposit Policy by Booking Timeline</h3>
       <table>
@@ -252,19 +208,18 @@
           </tr>
         </tbody>
       </table>
-      <p><em>All deposits are non-refundable. Booking is not confirmed until the deposit is received. We recommend booking early to ensure availability, especially during peak seasons.</em></p>
     </div>
 
     <div class="section-block">
       <h3>Open Tab Method (Weddings Only)</h3>
-      <p>The Open Tab payment method is available for weddings with <strong>more than 150 guests</strong>. Guests can order drinks throughout the event, and the total is billed to the host at the end.</p>
+      <p>The Open Tab payment method is available for weddings with <strong>more than 150 guests</strong>.</p>
       <ul>
         <li>A deposit is still required to reserve the date.</li>
         <li>Full payment is expected immediately after the event for all drinks served under the Open Tab.</li>
       </ul>
 
       <h3>Additional Notes</h3>
-      <p>We recommend reviewing all policies carefully before booking. Please contact us if you have questions regarding deposits, payment methods, or event-specific arrangements.</p>
+      <p>We recommend reviewing all policies carefully before booking. Contact us if you have questions regarding deposits, payment methods, or event-specific arrangements.</p>
     </div>
   </div>
 
@@ -274,8 +229,8 @@
 
   <script>
     function toggleMenu() {
-      const mobileNav = document.getElementById('mobileNav');
-      mobileNav.style.display = mobileNav.style.display === "flex" ? "none" : "flex";
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.style.display = navLinks.style.display === "flex" ? "none" : "flex";
     }
   </script>
 </body>
